@@ -8,7 +8,7 @@ float[] moveRand;
 boolean side;
 float a = 0;
 int cam=0, col=3;
-GifMaker fileGIF;
+//GifMaker fileGIF;
 
 void setup()
 { 
@@ -44,8 +44,8 @@ void setup()
   stickZ.setTexture(woodTexture);
   endShape();
   
-  fileGIF= new GifMaker(this,"animation.gif");
-  fileGIF.setRepeat(0);
+  //fileGIF= new GifMaker(this,"animation.gif");
+  //fileGIF.setRepeat(0);
 }
 
 void draw(){
@@ -181,7 +181,7 @@ void draw(){
   popMatrix();
   
    moveBall();
-   fileGIF.addFrame();
+   //fileGIF.addFrame();
 }
 
 void keyPressed()
@@ -239,9 +239,9 @@ void keyReleased()
     moveX=0;
     a=0;
   }
-  if(key == 'g' || key == 'G'){
+  /*if(key == 'g' || key == 'G'){
     fileGIF.finish();
-  }
+  }*/
 }
 
 
