@@ -3,10 +3,10 @@ Péndulo de Newton en 3D.
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">Navegación a travéS del sistema solar</h3>
+  <h3 align="center">Péndulo de Newton</h3>
 
   <p align="center">
-    ¡Navega a través del Sistema Solar!
+    ¡Péndulo de Newton en 3D!
     <br />
       <a href="https://github.com/carlosepb/PenduleNewton"><strong>Explorar repositorio»</strong></a>
     <br />
@@ -52,31 +52,37 @@ Péndulo de Newton en 3D.
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
 <p align="justify">
-En la primera pantalla se nos presentarán las instrucciones de como entrar y salir del modo cámara libre, además de los controles de movimiento. también podemos ver los planetas orbitar alrededor del sol con sus respectivos nombres y rotaciones sobre si mismos. Se ha limitado la zona de desplazamiento para evitar alejarnos demasiado del sistema solar o superar la coordenada 0 del eje z.(imagen_1.0)
+Al abrir la aplicación podremos ver los controles de movimiento para la figura en 3D, en nuestro caso un péndulo de Newton. El cual podremos rotar sobre si mismo en el eje X e Y utilizando las flechas de dirección, además de cambiar el efecto de la luz con un clic del ratón. También podemos usar la tecla espacio para activar el movimiento automático de la cámara y las teclas r para reiniciar todo y e para cerrar la aplicación.(imagen_1.0)
 </p>
 <p align="center"><img src="images/instrucciones.JPG" alt="instrucciones" width="600" height="425"></br>imagen_1.0</p>
 <p align="justify">
-Una vez entremos en el modo cámara libre podremos desplazarnos libremente a través del sistema solar utilizando las teclas de flechas para subir, bajar, ir izquierda e ir derecha, además de w y s para avanzar y retroceder. En la imagen inferior podemos ver como podemos alejarnos.(imagen_2.0)
+Como podemos ver en la imagen inferior tenemos una rotación de la figura además de un cambio de efecto de luz los cuales pueden ser cuatro (realista, rojo, verde y azul). (imagen_2.0)
 </p>
 <p align="center"><img src="images/captura1.JPG" alt="cambio de luz" width="600" height="425"></br>imagen_2.0</p>
 <p align="justify">
-En la imagen inferior podemos ver como también podemos acercarnos a los distintos planetas además de la estrella. Al desplazarnos la nave no lo hace modificando directamente su posición si no que aumenta gradual mente su velocidad según el tiempo que se tenga una de las teclas de desplazamiento pulsada hasta una velocidad máxima e igualmente ira perdiendo velocidad gradualmente una vez soltemos la tecla.(imagen_3.0)
+Como se explicó en el primer párrafo utilizando la tecla espacio podemos activar el movimiento automático de la cámara lo que hace que esta se desplace alrededor de la figura en una secuencia programada a modo de salvapantallas. En este modo aún podemos aplicar rotaciones y cambios de luz.(imagen_3.0)
 </p>
 <p align="center"><img src="images/captura2.JPG" alt="cambio de cámara" width="600" height="425"></br>imagen_3.0</p>
 <p align="justify">
-Por último podemos ver como cambiamos del modo vista normal al modo cámara dinámica y desplazarnos por el sistema solar y volver al modo normal que resetea el estado de la cámara.(imagen_4.0)
+En la imagen inferior podemos ver la ejecución del programa en un GIF que nos permite ver los cuatro estados de luz, además de una rotación y un reinicio del estado.(imagen_4.0)
 </p>
 <p align="center"><img src="images/animation.gif" alt="ejecución" width="600" height="425"></br>imagen_4.0</p>
 
 ## Trabajo Realizado
 <p align="justify">
-Para el movimiento de la cámara se usa la función camera() la cual varia de estática a móvil dependiendo de una variable booleana que controla en que estado de funcionamiento se encuentra en ese momento, haciendo uso del evento keypressed() y keyreleased() para realizar los cambios de estado.
+Para la rotación de la figura sobre si misma se utilizan los eventos keypressed y released utilizados en la primera practica además de la función rotate(). Estas tres cosas combinadas nos permiten realizar modificaciones en la inclinación de la figura respecto al eje 0.
 </p>
 <p align="justify">
-Se ha decidido mantener la rotación y orbita de los planetas activa durante el movimiento de la cámara para permitir ver las diferentes partes de los planetas y la estrella ya que de otra manera la parte posterior siempre estaría oculta.
+Para el cambio de luz se hace uso de las funciones ambientLight y lights dependiendo del efecto que queramos producir.
 </p>
 <p align="justify">
-El sistema de aceleración y frenado se a diseñado de manera que al mantener una tecla pulsada una variable de tipo float aumente gradualmente su valor hasta un máximo en cada iteración de la función draw().
+El movimiento de la cámara se ha programado de manera automática para que se desplace alrededor de la figura usando la función camera.
+</p>
+<p align="justify">
+Para crear la figura se han usado los elementos 3D box y sphere para la estructura y las esferas respectivamente. Para el caso de las esferas que se encuentran en los extremos intercambian una variable que es la que define su posición al chocar con las esferas centrales y estas se desplazan de manera aleatoria en la dirección que recibieron el impacto.
+</p>
+<p align="justify">
+En caso de querer utilizar la función de crear GIF se deben descomentar las líneas 11, 47, 48, 184 y 242-244. Estas se encuentran comentadas para mejorar la eficiencia de la ejecución.
 </p>
 
 ## Herramientas de Desarrollo
